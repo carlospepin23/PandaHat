@@ -1,0 +1,27 @@
+
+Weekly Report (Week 1) WriteUps August 21-26
+
+	Obedient Cat
+El primer ejercicio, lei las intrucciones y decia que descargara un archivo, en el cua habria un flag a simple vista, y asi fue. Copie y pegue el flag en la barra de contestaciones y obtuve los puntos.
+	Wave flag
+Para el segundo ejercicio, me percate que habia que descifrar un archivo que nos permitia descargar. Utilice el webshell para abrir el archivo, y le di al menu de ayuda del archivo, y me proveyo el flag.
+	Python Wrangling
+Para este ejercicio, lei las instrucciones y vi que tenia que ver con decifrar un python script usando un password por ello primero abri el scrip, para ver como estaba escrito y si veia algo que me pudiera ser util. Luego use el webshell para descargar los archivos, correr el python script, puse el password y obtuve el flag.
+
+	Static aint always noise
+Para este ejercicio consegui los dos documentos que fueron provistos, tanto el static file como el bash file. Una vez descargados en el webshell abri el bash script para ver que contenia, y si conseguia alguna pista, y vi que habia que conseguir un string del static, asi que corri en la terminal el script junto al static file, y me dio un archivo binario que tenia texto. Asi que le aplique la funcion de string -a (nombre del archivo binario), y entre las palabras que enlistaba habia encontre el flag.
+
+	Nice netcad
+Para resolver este ejercicio, corri el command line de nc mercury.picoctf.net 22902 para ver que obtenia, y recibi una lista de numeros que no pasaban de 3 cifras. Las intrucciones mencionaba que podrias hablar con el programa asi que supuse que la lista era algun mensaje cifrado. Busque en internet, me oriente, y para mi sorpresa halle que el mismo es una representacion de ASCII characters. Por ello fui a CyberChef, seleccione la opcion de From Charcode base 10, y obtuve el flag.
+	
+	Magikarp Ground Mission
+Para resolver este ejercicio, corri el servidor de ubuntu que asignaron, y me conecte a el. En el navegue a traves del terminal para ir accediendo a los archivos de texto, los cuales habria con (cat) que tenian en partes el flag.
+	
+	2Warm
+Este ejercicio consistia en cambiar el numero 42 (base 10) a binario (base 2). Para resolverlo utilice CyberChef por sus herramientas que son utiles para convertir mensajes encriptados. Al final puse el resultado dentro del formato picoCTF{###} y consegui la puntuacion.
+
+	Lets Warm Up
+Para este ejercicio, utilice CyberChef para convertir una cifra de Hexadecimal a Ascii. Cuando obtuve el resultado lo puse dentro del formato del flag, y obtuve la puntuacion.
+
+	Warm Up
+Para este ejercicio, busque una herramienta en internet para poder trasnformar de hexadecimal (base 16) a decimal (base 10). Logre obtener un numero de esta conversion, y lo puse en el formato del flag. Obtuviendo asi la puntuacion correspondiente.

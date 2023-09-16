@@ -1,0 +1,39 @@
+
+Week Report (Week 2) WriteUps August 28 - September 2
+
+SSH Information
+Host: bandit.labs.overthewire.org
+Port: 2220
+
+ssh bandit.labs.overthewire.org -p 2220 -l bandit#
+
+Learned Commands:
+
+-man manual
+-cp change dir
+-ls searches in dir files
+-cat reads txt files
+-file detects file type
+-find searches files in dir
+-cd ~ goes to root dir
+-cd .. goes to prev dir
+
+Para el nivel 0 de OverTheWire, aprendi a conectarme al servidor con ssh, y a conectarme al puerto con -p, y poner el username con -l. Una vez que entre lei el documento readMe y consegui el flag: NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL.
+
+Para el nivel 1, despues de login a bandit1 y usar el password del ejercicio anterior, entre y vi el archivo llamado "-". Trate de leerlo con cat, pero en un principio no me lo permitio. Por ende, lei en internet y aprendi que para leer dashed files, tiene que usarse el simbolo "<" antes de ingresar el nombre con el dash. Lo hice y consegui el flag: rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+Para el nivel 2, note que habia un file llamado "spaces in this file name", por lo que hice cat "spaces in this file name", y me dio el flag: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG.
+
+Para el nivel 3, realice un ls para ver que contenia el directorio principal y me percate que no habia nada. Procedi a hacer "find" para ver que habia, y vi un file llamado "./.hidden", asi que hice "file ./.hidden" para ver que tipo de archivo era, y era un texto. Asi que hice "cat ./.hidden" y me dio el flag: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe.
+
+Para el nivel 4, realice "ls" para ver los archivos, y me percate de muchos archivos llamados "file##" seguido por numeros que iban de 00 a 09. Escribi file seguido de los nombres de los archivos para percatarme de que tipos eran, hasta que note que el file "./file07" era ASCII text, asi que hice "cat ./-file07" y consegui el flag: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR.
+
+Para el nivel 5, realice "ls" para visualizar los archivos que habian, y me percate de varios directorios con subdirectorios. Lei las intrucciones y me percate que buscaba un archivo con un tamano, y especificaciones unicas. Por ello utilice el comando "find" con las especificaciones declaradas. Entre ellas "size 1033c", "-readable" & "! -executable", y consegui el flag: P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+Para el nivel 6, hice "ls" y me dije que no habian documentos. Las intrucciones indicaban que buscara por todo el servidor un archivo con varias especificaciones. Para ello hice "find /" junto a las especificaciones -size 33c, -user bandit6, group 7, y entre los archivos que encontre vi un documento que terminaba en password. Copie la dirrecion del archivo, la pegue en la terminal, y pude leer con cat el flag: z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S.
+
+Para el nivel 7, hice "ls" para ver los archivos del directorio y me percate de un documento llamado "data.txt" que contiene un monton de palabras. En las intrucciones indicaba que se buscara la palabra "millionth" por lo que para buscar en el documento de palabras, use el comando "grep -w" que encontro la palabra y me dio el siguiente flag: TESKZC0XvTetK0S9xNwm25STk5iWrBvP.
+
+Para el nivel 8, hice "ls" para ver los documentos, y me percate que estaba el mismo documento llamado data.txt que contenia un monton de letras sin orden, en el cual tenia que buscar el flag. Entre los comandos puse sort, para que se organizaran los codigos por los patrones, y luego escribi uniq -u, para ver que linea no se repetia, en la cual me salio el flag: EN632PlfYiZbn3PhVK3XOGSlNInNE00t. (sort data.txt | uniq -u) El "|" se utiliza para unir las operaciones.
+
+
