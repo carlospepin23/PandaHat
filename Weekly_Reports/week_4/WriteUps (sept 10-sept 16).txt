@@ -1,0 +1,18 @@
+Weekly Report (Week 4) WriteUps September 10-16
+
+Wireshark doo dooo do doo...
+
+Author: Dylan
+Description
+Can you find the flag? shark1.pcapng.
+
+
+Para resolver este ejercicio de forensic, primero descargue el archivo que aparentaba ser un ejecutable de la aplicacion WireShark por lo que lo abri, y efectivamente. Entre los paquetes capturados me percate de unos con TCP, por lo que lo seleccione, le di follow TCP Stream, a lo que en uno de los streams vi un cifrado en curly brackets. Copie y pegue ese cifrado en un decoder online para ver que cifrado era, siendo este ROT13. Lo desencripte con CyberChef y me dio el flag: PicoCTF{p33kab00_1_s33_u_deadbeef}.
+
+Glory of the Garden
+
+Author: jedavis/Danny
+Description
+This garden contains more than it seems.
+
+Para resolver este ejercicio de Forensics, primero descargue la imagen requerida. Realice file "garden.jpg" para asegurarme que fuera un archivo con formato de imagen. Luego de cersionarme que fuera una imagen le hice binwalk "garden.jpg" y me percate que tenia un string oculto ademas del formato de la foto, asi que hice strings "garden.jpg", y entre el texto que extrajo se encontraba el flag: picoCTF{more_than_m33ts_the_3y3eBdBd2cc}.

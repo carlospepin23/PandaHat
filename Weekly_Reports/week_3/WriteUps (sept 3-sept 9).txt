@@ -1,0 +1,23 @@
+Weekly Report (Week 3) WriteUps September 3-9
+
+learned commands:
+-file: command to know the file information
+-binwalk: tool to see if there is hidden files
+-strings: looks por printable strings in a file
+-grep: looks for a pattern
+-hexeditor: it decodes a file (xbase 64, ascii text)
+
+
+information
+Author: susie
+Description
+Files can always be changed in a secret way. Can you find the flag? cat.jpg
+
+Para este ejercicio de forensics debiamos descargar un archivo jpeg y extraer el flag oculto en el. De primetra instancia se tiene una foto con colores saturados y un tanto borrosa, lo que me dio la impresion de que habia pasado por una posible estenografia. Sin embargo, antes de analizar el archivo a fondo ejecute 'file [...]' para cersiorarme de que efectivamente era una foto. Luego, realice 'binwalk' para analizar si tenia un archivo oculto. Despues hice un cat [...] al archivo y salieron un monton de palabras y letras confusas, y pense que el codigo estaria encriptado. Hice hexeditor, y ahi pude recatar bastante texto, y consigo habian 2 lines de lo que parecian ser textos cifrados. Escogi uno de ellos, lo desencripte por base64 y obtuve el codigo correspondiente, el cual fue picoCTF{the_m3tadata_1s_modified}.
+
+Matryoshka doll
+Author: Susie/Pandu
+Description
+Matryoshka dolls are a set of wooden dolls of decreasing size placed one inside another. What's the final one? Image: this
+
+Para este ejercicio de forensics debiamos descargar una foto, con la representacion de un "matryoshka doll". Aqui entendi que debia analizar el archivo porque seguro tendria muchos mas archivos implicitos. Efectivamente, realice un file [...] para cersiorarme de que fuera una imagen, y luego hice binwalk. Aqui vi que tenia un archivo compreso con mas imagenes, asi que procedi a descomprimir cada archivo y foto hasta eventualmente conseguir el flag.
