@@ -1,0 +1,58 @@
+CVE-XXXX-XXXX
+
+Author: Mubarak Mikail
+Description
+Enter the CVE of the vulnerability as the flag with the correct flag format: picoCTF{CVE-XXXX-XXXXX} replacing XXXX-XXXXX with the numbers for the matching vulnerability. The CVE we're looking for is the first recorded remote code execution (RCE) vulnerability in 2021 in the Windows Print Spooler Service, which is available across desktop and server versions of Windows operating systems. The service is used to manage printers and print servers.
+
+Para resolver este ejercicio de busqueda, busque en google el primer "remote code execution vulnerability in 2021 in the Windows Print Spooler Service" y me salio que el mismo era: CVE-2021-34527. Puse el CVE dentro del formato de registro de flag, y consegui los puntos.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+basic-mod1
+
+Author: Will Hong
+Description
+We found this weird message being passed around on the servers, we think we have a working decryption scheme. Download the message here. Take each number mod 37 and map it to the following character set: 0-25 is the alphabet (uppercase), 26-35 are the decimal digits, and 36 is an underscore. Wrap your decrypted message in the picoCTF flag format (i.e. picoCTF{decrypted_message})
+
+Para resolver este ejercicio me percate que era conveniente realizar un python script para decodificar el mensaje de numeros, con modulo 37, y siguiendo el orden que se muestra en las intrucciones. A continuacion aparece el python script que elabore para el mismo, consiguiendo efectivamente el flag: R0UND_N_R0UND_B6B25531
+
+#Carlos J. Pepin Delgado <carlos.pepin1@upr.edu>
+#python script basic mode 1
+
+alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_']
+
+
+message=[165,248,94,346,299,73,198,221,313,137,205,87,336,110,186,69,223,213,216,216,177,138]
+
+for n in message:
+  print(str(alphabet[n%37]), end="")
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+extensions
+
+Author: Sanjay C/Danny
+Description
+This is a really weird text file TXT? Can you find the flag?
+  
+Para resolver este ejercicio, descargue el documento que me proporcionaba. Realice file "flag.txt" y me percate que era un archivo png, y no un documento de texto, asi que le cambie el formato al archivo por png, y cuando se abrio como formato foto ahi se encontraba el flag: picoCTF{now_you_know_about_extensions}.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Vigenere
+
+Author: Mubarak Mikail
+Description
+Can you decrypt this message? Decrypt this message using this key "CYLAB".
+
+Para resolver este ejercicio, descargue el archivo texto que contenia una frase cifrada en Vinegere (que es un metodo italiano de cifrar mensajes). Por ello para conseguir el flag busque un descifrador en linea para este tipo de criptografia, les proporcione el key CYLAB, y me dio el flag: picoCTF{D0NT_US3_V1G3N3R3_C1PH3R_2951a89h}.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Power Cookie
+
+Author: LT 'syreal' Jones
+Description
+Can you get the flag? Go to this website and see what you can discover.
+
+Para resolver este ejercicio de Web Exploitation, en el cual debia manejar las cookies. Primero accedi al url que me proporcionaron, y me percate al hacer inspect que cuando seleccionaba el boton de "Continue as Guests" creaba un cookie llamado isAdmin. Ese cookie tenia un valor de 0, por lo que intente cambiarlo a 1, y reiniciar la pagina, y la frase que decia "El servicio no estaba disponible por el momento", se cambio al siguiente flag: picoCTF{gr4d3_A_c00k13_65fd1e1a}.
